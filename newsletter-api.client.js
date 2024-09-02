@@ -1,4 +1,4 @@
-const Http = require('./lib/http');
+import Http from './lib/http';
 
 /**
  * @param fetchFn for browser simply `fetch` | for node `const fetch = require('node-fetch')`
@@ -12,7 +12,7 @@ const Http = require('./lib/http');
  *  const jwt = await client.auth.login('admin', 'password')
  *  await client.subscribers.sendNewsletterToAuthorizedSubscribers(jwt, 'subject', '1st newsletter message 🎉🎂')
  */
-function NewsletterAPIClient(fetchFn) {
+export default function NewsletterAPIClient(fetchFn) {
     const http = Http(fetchFn);
     return {
         auth: {
@@ -30,5 +30,3 @@ function NewsletterAPIClient(fetchFn) {
         }
     }
 }
-
-module.exports = NewsletterAPIClient;
