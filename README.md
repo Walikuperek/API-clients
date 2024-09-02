@@ -25,33 +25,10 @@ git commit -m "Added API clients"
 
 ## Clients
 
-- **[NewsletterAPI](https://github.com/Walikuperek/NewsletterAPI/tree/master)** - append new subscribers, send Newsletter, etc.
+| Client        | Purpose                                                                                                                        |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------|
+| NewsletterAPI | append new subscribers, send Newsletter, etc. ([NewsletterAPI link](https://github.com/Walikuperek/NewsletterAPI/tree/master)) |
 
-<br />
-<hr />
-
-**In case you will struggle with Submodules:**
-
-> How to clone repo with submodules?
-> ```bash
-> git clone --recurse-submodules https://github.com/user/repo-with-submodules.git
-> ```
->
-> Or, you already cloned without `--recurse-submodules`:
->
-> ```bash
-> git submodule init
-> git submodule update
-> ```
->
-> How to update submodule
-> ```
-> cd path/to/submodule
-> git pull origin main
-> cd path/to/repository
-> git add path/to/submodule
-> git commit -m "Submodule updated"
-> ```
 
 **Author**
 QUAK Kacper Walczak, [visit website to see more details](https://quak.com.pl)
