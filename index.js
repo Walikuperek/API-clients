@@ -1,5 +1,5 @@
 import NewsletterAPIClient from "./newsletter-api.client";
 
-export default {
+export const api = {
     newsletter: NewsletterAPIClient
 };
