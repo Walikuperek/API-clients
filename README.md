@@ -12,7 +12,7 @@ await client.subscribers.addNewSubscriber('email@em.com', 'Full Name') // will s
 const fetch = require('node-fetch')
 const client = NewsletterAPIClient(fetch)
 const jwt = await client.auth.login('admin', 'password')
-await client.subscribers.sendNewsletterToAuthorizedSubscribers(jwt, 'subject', '1st newsletter message 🎉🎂')
+await client.subscribers.sendNewsletter(jwt, 'subject', '🎉 1st newsletter message 🎂')
 ```
 
 Simple install into your project:
