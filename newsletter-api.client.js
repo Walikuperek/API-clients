@@ -25,7 +25,7 @@ export default function NewsletterAPIClient(fetchFn) {
             addNewSubscriber: async (email, name) => await http.post(`/api/subscribers/`, {email, name}),
             getAuthorizedSubscribers: async (jwt) => await http.get(`/api/subscribers/`, {}, {'Authorization': jwt}),
             deleteSubscriber: async (jwt, id) => await http.delete(`/api/subscribers/${id}`, {'Authorization': jwt}),
-            sendNewsletterToAuthorizedSubscribers: async (jwt, subject, message) =>
+            sendNewsletter: async (jwt, subject, message) =>
                 await http.post(`/api/subscribers/send`, {subject, message}, {'Authorization': jwt})
         }
     }
