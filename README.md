@@ -7,7 +7,7 @@ Client examples usage:
 import { api } from './libs/api-client';
 import fetch from 'node-fetch'; // for NodeJS only
 
-const newsletterAPI = api.newsletter(fetch)
+const newsletterAPI = api.newsletter(fetch, 'localhost:3000') // or your prod Newsletter service url
 const textToTextAI = new api.textToTextAI({ // chatgpt
   fetchFn: fetch,
   apiKey: "your-openai-api-key",
