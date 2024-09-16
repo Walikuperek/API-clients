@@ -1,5 +1,7 @@
+import ChatGPTClient from "./chatgpt-api.client";
 import NewsletterAPIClient from "./newsletter-api.client";
 
-export const api = {
+export default {
+    textToTextAI: ChatGPTClient,
     newsletter: NewsletterAPIClient
 };

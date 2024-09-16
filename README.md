@@ -2,17 +2,28 @@
 
 *Based on API's from [GitHub QUAK repositories](https://github.com/walikuperek).*
 
-Client example usage:
+Client examples usage:
 ```javascript copy
-// Browser
-const client = NewsletterAPIClient(fetch)
-await client.subscribers.addNewSubscriber('email@em.com', 'Full Name') // will send confirmation email
+import { api } from './libs/api-client';
+import fetch from 'node-fetch'; // for NodeJS only
 
-// NodeJS
-const fetch = require('node-fetch')
-const client = NewsletterAPIClient(fetch)
-const jwt = await client.auth.login('admin', 'password')
-await client.subscribers.sendNewsletter(jwt, 'subject', '🎉 1st newsletter message 🎂')
+const newsletterAPI = api.newsletter(fetch)
+const textToTextAI = new api.textToTextAI({ // chatgpt
+  fetchFn: fetch,
+  apiKey: "your-openai-api-key",
+  n: 2 // 2 responses, 1 default
+});
+
+(async () => {
+    // ChatGPT API
+    const title = "Red Pillow 50cm x 50cm"
+    const [description, description2] = await textToTextAI.gen(`Generate product description for an action based on this title: ${title}`)
+
+    // NewsletterAPI
+    await newsletterAPI.subscribers.addNewSubscriber('email@em.com', 'Full Name') // will send confirmation email
+    const jwt = await newsletterAPI.auth.login('username', 'password')
+    await newsletterAPI.subscribers.sendNewsletter(jwt, 'subject', '1st newsletter message 🎉🎂')
+})();
 ```
 
 Simple install into your project:
@@ -25,9 +36,10 @@ git commit -m "Added API clients"
 
 ## Clients
 
-| Client        | Purpose                                                                                                                        |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| NewsletterAPI | append new subscribers, send Newsletter, etc. ([NewsletterAPI link](https://github.com/Walikuperek/NewsletterAPI/tree/master)) |
+| Client         | Purpose                                                                                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| ChatGPT API    | generate response from prompt                                                                                                  |
+| Newsletter API | append new subscribers, send Newsletter, etc. ([NewsletterAPI link](https://github.com/Walikuperek/NewsletterAPI/tree/master)) |
 
 
 **Author**
