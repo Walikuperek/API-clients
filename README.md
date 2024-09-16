@@ -17,7 +17,7 @@ const textToTextAI = new api.textToTextAI({ // chatgpt
 (async () => {
     // ChatGPT API
     const title = "Red Pillow 50cm x 50cm"
-    const [description, description2] = await textToTextAI.prompt(`Take ${title} and generate product description.`)
+    const [description, description2] = await textToTextAI.prompt(`Take "${title}" and generate product description.`)
 
     // NewsletterAPI
     await newsletterAPI.subscribers.addNewSubscriber("email@em.com", "Full Name") // will send confirmation email
