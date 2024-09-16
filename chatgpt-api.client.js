@@ -42,11 +42,11 @@ export default class ChatGPTClient {
     }
 
     /**
-     * Generate a response from ChatGPT based on the prompt.
+     * Generate a response from ChatGPT based on the prompt text.
      * @param {string} prompt - The prompt to send to the OpenAI API.
      * @returns {Promise<string[]>} - Returns a Promise that resolves to an array of responses.
      */
-    async gen(prompt) {
+    async prompt(prompt) {
         const requestBody = {
             model: this.model,
             messages: [{ role: "user", content: prompt }],
