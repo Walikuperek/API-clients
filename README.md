@@ -4,10 +4,10 @@
 
 Client examples usage:
 ```javascript copy
-import { api } from './libs/api-client';
-import fetch from 'node-fetch'; // for NodeJS only
+import { api } from "./libs/api-client";
+import fetch from "node-fetch"; // for NodeJS only
 
-const newsletterAPI = api.newsletter(fetch, 'localhost:3000') // or your prod Newsletter service url
+const newsletterAPI = api.newsletter(fetch, "localhost:3000") // or your prod Newsletter service url
 const textToTextAI = new api.textToTextAI({ // chatgpt
   fetchFn: fetch,
   apiKey: "your-openai-api-key",
@@ -20,9 +20,9 @@ const textToTextAI = new api.textToTextAI({ // chatgpt
     const [description, description2] = await textToTextAI.gen(`Generate product description for an action based on this title: ${title}`)
 
     // NewsletterAPI
-    await newsletterAPI.subscribers.addNewSubscriber('email@em.com', 'Full Name') // will send confirmation email
-    const jwt = await newsletterAPI.auth.login('username', 'password')
-    await newsletterAPI.subscribers.sendNewsletter(jwt, 'subject', '1st newsletter message 🎉🎂')
+    await newsletterAPI.subscribers.addNewSubscriber("email@em.com", "Full Name") // will send confirmation email
+    const jwt = await newsletterAPI.auth.login("username", "password")
+    await newsletterAPI.subscribers.sendNewsletter(jwt, "subject", "1st newsletter message 🎉🎂")
 })();
 ```
 

@@ -2,9 +2,9 @@
  * Configuration object for ChatGPTClient.
  * Contains all the parameters that can be sent to the OpenAI API.
  * @typedef {Object} ChatGPTConfig
- * @param fetchFn for browser simply `fetch` | for node `const fetch = require('node-fetch')`
+ * @param fetchFn for browser simply `fetch` | for node `const fetch = require("node-fetch")`
  * @property {string} apiKey - API key for authenticating with OpenAI.
- * @property {string} [model="gpt-4"] - The model to use for the completion (default is 'gpt-4').
+ * @property {string} [model="gpt-4"] - The model to use for the completion (default is "gpt-4").
  * @property {string} [apiUrl="https://api.openai.com/v1/chat/completions"] - The API URL for OpenAI.
  * @property {number} [temperature=0.7] - Sampling temperature, higher values make output more random (default is 0.7).
  * @property {number} [maxTokens=150] - The maximum number of tokens to generate in the completion (default is 150).
