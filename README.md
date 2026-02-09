@@ -16,7 +16,7 @@ const textToTextAI = new api.textToTextAI({ // chatgpt
 
 (async () => {
     // ChatGPT API
-    const title = "Red Pill (aka White Rabbit, messenger told so...)"
+    const title = "White Rabbit..."
     const [description, description2] = await textToTextAI.prompt(`Take "${title}" and generate product description.`)
 
     // NewsletterAPI
